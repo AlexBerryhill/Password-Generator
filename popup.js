@@ -8,9 +8,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   
     function generatePassword() {
-      // Generate your password logic here
-      // Replace this with your own password generation algorithm
-      var password = "MyGeneratedPassword123";
+      var length = 10; // Change the length of the generated password if desired
+      var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()"; // Characters to include in the password
+      var password = "";
+  
+      for (var i = 0; i < length; i++) {
+        var randomIndex = Math.floor(Math.random() * charset.length);
+        password += charset.charAt(randomIndex);
+      }
+  
       return password;
     }
   });
